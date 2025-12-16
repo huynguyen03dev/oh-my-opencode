@@ -22,7 +22,7 @@ import {
   createInteractiveBashSessionHook,
   createEmptyMessageSanitizerHook,
 } from "./hooks";
-import { createGoogleAntigravityAuthPlugin } from "./auth/antigravity";
+
 import {
   loadUserCommands,
   loadProjectCommands,
@@ -263,14 +263,9 @@ const OhMyOpenCodePlugin: Plugin = async (ctx) => {
   const callOmoAgent = createCallOmoAgent(ctx, backgroundManager);
   const lookAt = createLookAt(ctx);
 
-  const googleAuthHooks = pluginConfig.google_auth !== false
-    ? await createGoogleAntigravityAuthPlugin(ctx)
-    : null;
-
   const tmuxAvailable = await getTmuxPath();
 
   return {
-    ...(googleAuthHooks ? { auth: googleAuthHooks.auth } : {}),
 
     tool: {
       ...builtinTools,

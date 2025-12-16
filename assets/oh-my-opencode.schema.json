@@ -57,7 +57,9 @@
           "startup-toast",
           "keyword-detector",
           "agent-usage-reminder",
-          "non-interactive-env"
+          "non-interactive-env",
+          "interactive-bash-session",
+          "empty-message-sanitizer"
         ]
       }
     },
@@ -1195,9 +1197,6 @@
           "type": "boolean"
         }
       }
-    },
-    "google_auth": {
-      "type": "boolean"
     },
     "omo_agent": {
       "type": "object",

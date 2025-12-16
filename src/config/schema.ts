@@ -113,7 +113,6 @@ export const OhMyOpenCodeConfigSchema = z.object({
   disabled_hooks: z.array(HookNameSchema).optional(),
   agents: AgentOverridesSchema.optional(),
   claude_code: ClaudeCodeConfigSchema.optional(),
-  google_auth: z.boolean().optional(),
   omo_agent: OmoAgentConfigSchema.optional(),
 })
 

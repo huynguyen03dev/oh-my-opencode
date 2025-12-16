@@ -46,7 +46,6 @@
     - [Step 3: Verify Setup](#step-3-verify-setup)
     - [Step 4: Configure Authentication](#step-4-configure-authentication)
       - [Anthropic (Claude)](#anthropic-claude)
-      - [Google Gemini (Antigravity OAuth)](#google-gemini-antigravity-oauth)
       - [OpenAI (ChatGPT Plus/Pro)](#openai-chatgpt-pluspro)
         - [Model Configuration](#model-configuration)
     - [⚠️ Warning](#️-warning)
@@ -68,7 +67,6 @@
       - [Compatibility Toggles](#compatibility-toggles)
     - [Not Just for the Agents](#not-just-for-the-agents)
   - [Configuration](#configuration)
-    - [Google Auth](#google-auth)
     - [Agents](#agents)
       - [Permission Options](#permission-options)
     - [OmO Agent](#omo-agent)
@@ -242,19 +240,6 @@ opencode auth login
 # Verify success and confirm with user
 ```
 
-#### Google Gemini (Antigravity OAuth)
-
-Then authenticate:
-
-```bash
-opencode auth login
-# Interactive Terminal: find Provider: Select Google
-# Interactive Terminal: find Login method: Select Google
-# Guide user through OAuth flow in browser. You use tools like pbcopy or other equivalents depending on your OS, and tell user that you have copied the link and paste it to the browser
-# Wait for completion
-# Verify success and confirm with user
-```
-
 #### OpenAI (ChatGPT Plus/Pro)
 
 First, add the opencode-openai-codex-auth plugin:
@@ -300,7 +285,7 @@ opencode auth login
 
 **Unless the user explicitly requests it, do not change model settings or disable features (agents, hooks, MCPs).**
 
-The plugin works perfectly by default. Except for the recommended `google_auth: true` setting, do not change other settings or turn off features without an explicit request.
+The plugin works perfectly by default. Do not change other settings or turn off features without an explicit request.
 
 ### Verify the setup
 
@@ -553,18 +538,6 @@ Schema autocomplete supported:
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json"
 }
 ```
-
-### Google Auth
-
-Enable built-in Antigravity OAuth for Google Gemini models:
-
-```json
-{
-  "google_auth": true
-}
-```
-
-When enabled, `opencode auth login` shows "OAuth with Google (Antigravity)" for the Google provider.
 
 ### Agents
 

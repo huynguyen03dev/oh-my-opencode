@@ -50,7 +50,6 @@
       - [호환성 토글](#호환성-토글)
     - [에이전트들을 위한 것이 아니라, 당신을 위한 것](#에이전트들을-위한-것이-아니라-당신을-위한-것)
   - [설정](#설정)
-    - [Google Auth](#google-auth)
     - [Agents](#agents)
       - [Permission 옵션](#permission-옵션)
     - [OmO Agent](#omo-agent)
@@ -218,28 +217,7 @@ opencode auth login
 # 진짜 완료되었음을 검증하고 사용자에게 안내
 ```
 
-#### 4.2 Google Gemini (Antigravity OAuth)
-
-먼저 `~/.config/opencode/oh-my-opencode.json` 에서 Google auth를 활성화하세요:
-
-```json
-{
-  "google_auth": true
-}
-```
-
-그 후 인증:
-
-```bash
-opencode auth login
-# Provider: Google 선택
-# Login method: OAuth with Google (Antigravity) 선택
-# 사용자에게 브라우저에서 OAuth 플로우를 완료하도록 안내
-# 최종 완료까지 대기
-# 진짜 완료되었음을 검증하고 사용자에게 안내
-```
-
-#### 4.3 OpenAI (ChatGPT Plus/Pro)
+#### 4.2 OpenAI (ChatGPT Plus/Pro)
 
 먼저 opencode-openai-codex-auth 플러그인 추가:
 
@@ -284,7 +262,7 @@ opencode auth login
 
 **사용자가 명시적으로 요청하지 않는 한, 모델 설정을 변경하거나 기능(에이전트, 훅, MCP)을 비활성화하지 마세요.**
 
-플러그인은 기본값으로 완벽하게 동작합니다. 권장 사항인 `google_auth: true` 설정을 제외하고는, 명시적인 요청 없이 다른 설정을 변경하거나 기능을 끄지 마세요.
+플러그인은 기본값으로 완벽하게 동작합니다. 명시적인 요청 없이 다른 설정을 변경하거나 기능을 끄지 마세요.
 
 ### 설정 확인
 
@@ -537,18 +515,6 @@ Schema 자동 완성이 지원됩니다:
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json"
 }
 ```
-
-### Google Auth
-
-Google Gemini 모델을 위한 내장 Antigravity OAuth를 활성화합니다:
-
-```json
-{
-  "google_auth": true
-}
-```
-
-활성화하면 `opencode auth login` 실행 시 Google 프로바이더에서 "OAuth with Google (Antigravity)" 로그인 옵션이 표시됩니다.
 
 ### Agents
 
